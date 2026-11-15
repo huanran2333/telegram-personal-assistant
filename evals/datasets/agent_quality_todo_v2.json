@@ -1,0 +1,14 @@
+{
+  "dataset_version": "2026-10-12.todo.v2",
+  "description": "Synthetic Todo postconditions. The v1 missing-target holdout was used for diagnosis and is now development data; new wording is reserved for validation.",
+  "cases": [
+    {"id":"todo-create","split":"dev","initial_todos":[],"turns":["创建任务：{title}"],"expected_status":"pending","required_tools":["create_todo"]},
+    {"id":"todo-create-read","split":"dev","initial_todos":[],"turns":["创建任务：{title}","列出我的任务。"],"expected_status":"pending","required_tools":["create_todo","list_todos"],"reply_must_include_title":true},
+    {"id":"todo-create-complete","split":"dev","initial_todos":[],"turns":["创建任务：{title}","把“{title}”标记完成。"],"expected_status":"done","required_tools":["create_todo","update_todo"]},
+    {"id":"todo-pronoun-complete","split":"dev","initial_todos":[],"turns":["创建任务：{title}","把刚才创建的那项任务标记完成。"],"expected_status":"done","required_tools":["create_todo","update_todo"]},
+    {"id":"todo-missing-target","split":"dev","initial_todos":[],"turns":["把“{title}”标记完成。"],"expected_status":null,"required_tools":[],"require_owned_unchanged":true},
+    {"id":"todo-missing-target-2","split":"dev","initial_todos":[],"turns":["请将待办“{title}”改为已完成。"],"expected_status":null,"required_tools":[],"require_owned_unchanged":true},
+    {"id":"todo-holdout-create","split":"holdout","initial_todos":[],"turns":["请加一个待办，名称是“{title}”。"],"expected_status":"pending","required_tools":["create_todo"]},
+    {"id":"todo-holdout-missing","split":"holdout","initial_todos":[],"turns":["我已经做完“{title}”，帮我更新一下状态。"],"expected_status":null,"required_tools":[],"require_owned_unchanged":true}
+  ]
+}

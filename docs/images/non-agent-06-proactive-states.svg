@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="主动提醒是另一条链：定义、Occurrence、Delivery">
+<title>主动提醒是另一条链：定义、Occurrence、Delivery</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#547287"/></marker></defs>
+<rect width="1200" height="630" fill="#f8fafc"/>
+<text x="40" y="53" fill="#17354a" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="28" font-weight="600">主动提醒是另一条链：定义、Occurrence、Delivery</text>
+<rect x="48" y="130" width="235" height="90" rx="13" fill="#e7f2fb" stroke="#397da7" stroke-width="2"/>
+<text x="165" y="162" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Todo 提醒定义</text>
+<text x="165" y="191" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">reminder_at / version</text>
+<rect x="341" y="130" width="235" height="90" rx="13" fill="#fff0db" stroke="#bd8137" stroke-width="2"/>
+<text x="458" y="162" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">ScheduledOccurrence</text>
+<text x="458" y="191" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">稳定键、到期和租约</text>
+<rect x="635" y="130" width="235" height="90" rx="13" fill="#f0ebfa" stroke="#8065ad" stroke-width="2"/>
+<text x="752" y="162" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">OutboundDelivery</text>
+<text x="752" y="191" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">固定消息内容与分块</text>
+<rect x="929" y="130" width="235" height="90" rx="13" fill="#e8f5ec" stroke="#438a61" stroke-width="2"/>
+<text x="1046" y="162" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Telegram</text>
+<text x="1046" y="191" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">远端发送结果</text>
+<polyline points="283,175 340,175" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="576,175 633,175" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="870,175 927,175" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="90" y="293" width="1020" height="232" rx="16" fill="#eef2f5" fill-opacity="0.42" stroke="#7b8d99" stroke-opacity="0.55" stroke-width="1.5"/>
+<text x="110" y="324" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="18" font-weight="600" fill="#7b8d99">错误和恢复分支</text>
+<rect x="125" y="359" width="268" height="95" rx="13" fill="#eef2f5" stroke="#7b8d99" stroke-width="2"/>
+<text x="259" y="391" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">提醒已改期 / 已完成</text>
+<text x="259" y="420" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">旧版本不再新建发送意图</text>
+<rect x="464" y="359" width="268" height="95" rx="13" fill="#fff0db" stroke="#bd8137" stroke-width="2"/>
+<text x="598" y="391" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Worker 崩溃</text>
+<text x="598" y="420" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">租约到期后由恢复器领取</text>
+<rect x="803" y="359" width="268" height="95" rx="13" fill="#fdece9" stroke="#bd6254" stroke-width="2"/>
+<text x="937" y="391" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">发送结果不确定</text>
+<text x="937" y="420" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">记录 UNCERTAIN</text>
+<text x="937" y="443" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">不声称 exactly-once</text>
+<polyline points="458,220 258,359" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="458,220 598,359" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1046,220 937,359" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="40" y="606" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#647b8a">Scheduler/Daily Rundown 默认关闭；主动发送有独立开关，不能用“当前队列为空”代替授权。</text>
+</svg>

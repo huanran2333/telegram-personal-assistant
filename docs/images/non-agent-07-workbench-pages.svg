@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="工作台五页：页面是视图，业务权威在服务端">
+<title>工作台五页：页面是视图，业务权威在服务端</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#547287"/></marker></defs>
+<rect width="1200" height="630" fill="#f8fafc"/>
+<text x="40" y="53" fill="#17354a" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="28" font-weight="600">工作台五页：页面是视图，业务权威在服务端</text>
+<rect x="60" y="145" width="165" height="120" rx="13" fill="#e7f2fb" stroke="#397da7" stroke-width="2"/>
+<text x="142" y="177" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Today</text>
+<text x="142" y="206" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">任务 / 日历</text>
+<rect x="290" y="145" width="165" height="120" rx="13" fill="#e7f2fb" stroke="#397da7" stroke-width="2"/>
+<text x="372" y="177" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Tasks</text>
+<text x="372" y="206" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">详情 / 版本</text>
+<rect x="520" y="145" width="165" height="120" rx="13" fill="#e7f2fb" stroke="#397da7" stroke-width="2"/>
+<text x="602" y="177" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Calendar</text>
+<text x="602" y="206" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">本地 / Google</text>
+<rect x="750" y="145" width="165" height="120" rx="13" fill="#e7f2fb" stroke="#397da7" stroke-width="2"/>
+<text x="832" y="177" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Reminders</text>
+<text x="832" y="206" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">定义 / 投递</text>
+<rect x="980" y="145" width="165" height="120" rx="13" fill="#e7f2fb" stroke="#397da7" stroke-width="2"/>
+<text x="1062" y="177" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Approvals</text>
+<text x="1062" y="206" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">Saver 待审</text>
+<rect x="66" y="346" width="1067" height="170" rx="16" fill="#e8f5ec" fill-opacity="0.42" stroke="#438a61" stroke-opacity="0.55" stroke-width="1.5"/>
+<rect x="121" y="394" width="272" height="82" rx="13" fill="#f0ebfa" stroke="#8065ad" stroke-width="2"/>
+<text x="257" y="426" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Todo / Reminder 表</text>
+<rect x="464" y="394" width="272" height="82" rx="13" fill="#f0ebfa" stroke="#8065ad" stroke-width="2"/>
+<text x="600" y="426" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Calendar Adapter</text>
+<rect x="807" y="394" width="272" height="82" rx="13" fill="#f0ebfa" stroke="#8065ad" stroke-width="2"/>
+<text x="943" y="426" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Saver + WebRequest</text>
+<polyline points="143,265 143,307 257,394" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="373,265 373,307 257,394" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="603,265 603,307 600,394" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="833,265 833,307 257,394" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1063,265 1063,307 943,394" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="143,265 143,324 560,324 600,394" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
+<polyline points="603,265 603,335 350,335 310,394" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
+<text x="89" y="503" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="16" font-weight="400" fill="#426074">FastAPI 统一核对：Session / Owner / CSRF / 版本 / 幂等键</text>
+<text x="40" y="606" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#647b8a">前端 Query 缓存不是权威；审批不是按前端按钮状态执行，而是读 Saver 当前状态。</text>
+</svg>

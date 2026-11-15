@@ -1,0 +1,17 @@
+[project]
+name = "personal-productivity-agent"
+version = "0.2.0"
+requires-python = ">=3.12,<3.15"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-m 'not integration and not llm_integration and not calendar_integration and not gmail_integration and not pgvector_integration'"
+markers = [
+    "integration: requires a real PostgreSQL database configured by local .env",
+    "llm_integration: requires real PostgreSQL and a real OpenAI-compatible LLM configured by local .env",
+    "calendar_integration: requires real LLM, PostgreSQL, Google OAuth and Calendar MCP",
+    "gmail_integration: requires a separate real Gmail read-only OAuth token",
+    "pgvector_integration: requires the isolated PostgreSQL 18 assistant database with pgvector",
+    "provider_lifespan: this test owns the production provider clients via FastAPI lifespan",
+]

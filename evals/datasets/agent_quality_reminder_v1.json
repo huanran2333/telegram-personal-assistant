@@ -1,0 +1,44 @@
+{
+  "dataset_version": "2026-10-12.reminder.v1",
+  "description": "Synthetic future reminder definitions; no scheduler, Bot, or outbound provider is started. The local time is scored against the configured timezone.",
+  "cases": [
+    {
+      "id": "reminder-create-with-task",
+      "split": "dev",
+      "initial_todos": [],
+      "turns": ["创建任务：{title}，并在2030年1月15日上午9点提醒我。"],
+      "expected_status": "pending",
+      "expected_reminder_local": "2030-01-15 09:00",
+      "required_tools": ["create_todo"]
+    },
+    {
+      "id": "reminder-existing-task",
+      "split": "dev",
+      "initial_todos": ["{title}"],
+      "turns": ["请给任务“{title}”设置提醒：2030年1月15日上午9点。"],
+      "expected_status": "pending",
+      "expected_reminder_local": "2030-01-15 09:00",
+      "expected_reminder_version_delta": 1,
+      "required_tools": ["set_reminder"]
+    },
+    {
+      "id": "reminder-holdout-create",
+      "split": "holdout",
+      "initial_todos": [],
+      "turns": ["新增待办“{title}”，2030-01-15 09:00 给我提醒。"],
+      "expected_status": "pending",
+      "expected_reminder_local": "2030-01-15 09:00",
+      "required_tools": ["create_todo"]
+    },
+    {
+      "id": "reminder-holdout-existing",
+      "split": "holdout",
+      "initial_todos": ["{title}"],
+      "turns": ["把“{title}”的提醒时间设为2030年1月15日早上9时。"],
+      "expected_status": "pending",
+      "expected_reminder_local": "2030-01-15 09:00",
+      "expected_reminder_version_delta": 1,
+      "required_tools": ["set_reminder"]
+    }
+  ]
+}

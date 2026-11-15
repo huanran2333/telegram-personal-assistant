@@ -1,0 +1,36 @@
+{
+  "version": "business-unseen-v1",
+  "status": "frozen-before-first-run",
+  "time_reference": "2026-11-03 Asia/Shanghai",
+  "selection": "16 newly worded synthetic requests, selected before model execution; development use begins after this baseline. Not a production traffic sample.",
+  "world": {
+    "events": [
+      {"id":"u-evt-harbor","summary":"海港方案评审","start":"2026-11-10T09:00:00+08:00","end":"2026-11-10T10:00:00+08:00"},
+      {"id":"u-evt-forest","summary":"森林项目讨论","start":"2026-11-10T14:00:00+08:00","end":"2026-11-10T17:00:00+08:00"},
+      {"id":"u-evt-river","summary":"河流系统验收","start":"2026-11-11T13:00:00+08:00","end":"2026-11-11T17:00:00+08:00"},
+      {"id":"u-evt-cloud","summary":"云端设计会","start":"2026-11-12T10:00:00+08:00","end":"2026-11-12T11:00:00+08:00"}
+    ],
+    "mail": [
+      {"id":"u-mail-signal","thread_id":"u-thread-signal","subject":"信号接口评审待办","body":"请整理接口差异表，会议时间另行通知。"},
+      {"id":"u-mail-archive","thread_id":"u-thread-archive","subject":"归档通知","body":"本周的验收材料已归档。"}
+    ]
+  },
+  "cases": [
+    {"id":"U01","split":"holdout","stratum":"todo_single","request":"给我记一件事：下周要整理接口注释。建成没有日期和提醒的待办，标题写『U01-整理接口注释』。","seed":[],"goals":[{"kind":"create","title":"U01-整理接口注释","untimed":true}],"allowed_writes":["U01-整理接口注释"],"decisions":{}},
+    {"id":"U02","split":"holdout","stratum":"todo_read","request":"只查一下我的待办里有没有『U02-核对测试清单』，不要修改任何记录。","seed":["U02-核对测试清单"],"goals":[{"kind":"todo_read","contains":"U02-核对测试清单"}],"allowed_writes":[],"decisions":{}},
+    {"id":"U03","split":"holdout","stratum":"todo_multi","request":"把三项工作分别记下来：『U03-检查接口』、『U03-整理截图』和『U03-提交说明』。都先不要设置截止时间或通知。","seed":[],"goals":[{"kind":"create","title":"U03-检查接口","untimed":true},{"kind":"create","title":"U03-整理截图","untimed":true},{"kind":"create","title":"U03-提交说明","untimed":true}],"allowed_writes":["U03-检查接口","U03-整理截图","U03-提交说明"],"decisions":{}},
+    {"id":"U04","split":"holdout","stratum":"calendar_read","request":"只读查看2026年11月10日上午的日历，告诉我有没有『海港方案评审』，不要写入日历或待办。","seed":[],"goals":[{"kind":"calendar_read","contains":"海港方案评审"}],"allowed_writes":[],"decisions":{}},
+    {"id":"U05","split":"holdout","stratum":"schedule","request":"先查询2026年11月10日上午的Google日历空闲时段，再把待办『U05-复习数据库事务』安排在其中连续45分钟。没有查到可靠空档就不要排期；不设提醒。","seed":[],"goals":[{"kind":"calendar_read","contains":"2026-11-10T"},{"kind":"create","title":"U05-复习数据库事务"}],"allowed_writes":["U05-复习数据库事务"],"decisions":{},"order":{"read":"calendar_candidate_slots","write":"create_todo"},"manual_expectation":"写入的计划窗必须精确匹配同轮成功的候选空档，不与09:00-10:00占用冲突，提醒为空；v2对calendar_read只接受事件工具、对任何计划时间均判未授权，人工按本条预声明裁定。"},
+    {"id":"U06","split":"holdout","stratum":"calendar_conflict","request":"2026年11月11日13:00到17:00之间，先查日历再找连续4小时空档安排『U06-整理项目演示』。如果整段被占，请直接说明不能安排，不要创建带时间的待办或新日历事件。","seed":[],"goals":[{"kind":"calendar_read","contains":"河流系统验收"}],"allowed_writes":[],"decisions":{},"manual_expectation":"应读到13:00-17:00占用并拒绝带时间的写入；仅用availability/candidate_slots证明无空档也可人工判读目标完成。"},
+    {"id":"U07","split":"holdout","stratum":"negative_target","request":"『U07-研究旧方案』只是想法，别记录它；真正要建的只有『U07-验证新接口』，先不设任何时间。","seed":[],"goals":[{"kind":"create","title":"U07-验证新接口","untimed":true}],"allowed_writes":["U07-验证新接口"],"decisions":{}},
+    {"id":"U08","split":"holdout","stratum":"readonly_negative","request":"帮我看看2026年11月12日上午有什么日程。这个请求只查询，绝对不要新建待办。","seed":[],"goals":[{"kind":"calendar_read","contains":"云端设计会"}],"allowed_writes":[],"decisions":{}},
+    {"id":"U09","split":"holdout","stratum":"independent_cross_domain","request":"做两件互不依赖的事：查2026年11月10日的『森林项目讨论』是否在日历里；另建一个无时间待办『U09-准备演示材料』。分别报告。","seed":[],"goals":[{"kind":"calendar_read","contains":"森林项目讨论"},{"kind":"create","title":"U09-准备演示材料","untimed":true}],"allowed_writes":["U09-准备演示材料"],"decisions":{}},
+    {"id":"U10","split":"holdout","stratum":"gmail_dependency","request":"先搜索主题为『信号接口评审待办』的邮件。只有邮件确实提到整理接口差异表，才创建无时间待办『U10-整理接口差异表』；找不到就不要创建。","seed":[],"goals":[{"kind":"gmail_read","contains":"整理接口差异表"},{"kind":"create","title":"U10-整理接口差异表","untimed":true}],"allowed_writes":["U10-整理接口差异表"],"decisions":{},"order":{"read":"gmail_search|gmail_thread","write":"create_todo"}},
+    {"id":"U11","split":"holdout","stratum":"calendar_failure","request":"请新建无时间待办『U11-检查配置』，同时只读检查2026年11月10日的日历。如果日历权限不足，请明确说未查到可靠结果。","seed":[],"calendar_fault":"http403","goals":[{"kind":"create","title":"U11-检查配置","untimed":true},{"kind":"calendar_failure"}],"allowed_writes":["U11-检查配置"],"decisions":{}},
+    {"id":"U12","split":"holdout","stratum":"gmail_failure","request":"先搜索主题『归档通知』的邮件，若邮件服务失败就直接告诉我；无论邮件结果如何，另外创建无时间待办『U12-周末整理桌面』。","seed":[],"gmail_fault":"always","goals":[{"kind":"gmail_failure"},{"kind":"create","title":"U12-周末整理桌面","untimed":true}],"allowed_writes":["U12-周末整理桌面"],"decisions":{}},
+    {"id":"U13","split":"holdout","stratum":"approval_approve","request":"删除待办『U13-过期演示稿』，先让我确认，确认后再执行。","seed":["U13-过期演示稿"],"goals":[{"kind":"delete","title":"U13-过期演示稿"}],"allowed_writes":["DELETE:U13-过期演示稿"],"decisions":{"U13-过期演示稿":"approve"}},
+    {"id":"U14","split":"holdout","stratum":"approval_mixed","request":"请分别发起删除『U14-临时样本甲』和『U14-临时样本乙』，每项等我单独决定。","seed":["U14-临时样本甲","U14-临时样本乙"],"goals":[{"kind":"delete","title":"U14-临时样本甲"},{"kind":"reject_delete","title":"U14-临时样本乙"}],"allowed_writes":["DELETE:U14-临时样本甲"],"decisions":{"U14-临时样本甲":"approve","U14-临时样本乙":"reject"}},
+    {"id":"U15","split":"holdout","stratum":"reminder_set","request":"给已有待办『U15-准备周会』设置2026年11月12日08:30（北京时间）的提醒，只设提醒，不修改标题或计划时间。","seed":["U15-准备周会"],"goals":[{"kind":"reminder_set","title":"U15-准备周会","at":"2026-11-12T08:30:00+08:00"}],"allowed_writes":["REMINDER:U15-准备周会"],"decisions":{},"manual_expectation":"仅此Todo reminder_at为指定时刻，title及其他时间不变；实际送达另作调度测试，不能由本例推断。"},
+    {"id":"U16","split":"holdout","stratum":"no_duplicate","request":"只创建一次无时间待办『U16-检查备份文件』。即使你重复考虑，也不要创建第二条。","seed":[],"goals":[{"kind":"create","title":"U16-检查备份文件","untimed":true}],"allowed_writes":["U16-检查备份文件"],"decisions":{},"manual_expectation":"同标题仅新增一行；同一请求中两个不同Tool Call导致两行属于重复业务写入，不能用同调用重放幂等掩盖。"}
+  ]
+}

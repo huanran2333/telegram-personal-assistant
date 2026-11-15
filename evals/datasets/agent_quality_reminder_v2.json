@@ -1,0 +1,44 @@
+{
+  "dataset_version": "2026-10-12.reminder.v2",
+  "description": "Follow-up holdout after the v1 Chinese absolute-clock failure was diagnosed. Only synthetic Todo titles, with future non-dispatching times.",
+  "cases": [
+    {
+      "id": "reminder-v2-dev-create",
+      "split": "dev",
+      "initial_todos": [],
+      "turns": ["创建任务：{title}，并在2030年1月15日上午9点提醒我。"],
+      "expected_status": "pending",
+      "expected_reminder_local": "2030-01-15 09:00",
+      "required_tools": ["create_todo"]
+    },
+    {
+      "id": "reminder-v2-dev-existing",
+      "split": "dev",
+      "initial_todos": ["{title}"],
+      "turns": ["请给任务“{title}”设置提醒：2030年1月15日上午9点。"],
+      "expected_status": "pending",
+      "expected_reminder_local": "2030-01-15 09:00",
+      "expected_reminder_version_delta": 1,
+      "required_tools": ["set_reminder"]
+    },
+    {
+      "id": "reminder-v2-holdout-create",
+      "split": "holdout",
+      "initial_todos": [],
+      "turns": ["请记一项待办“{title}”，2031年4月8日早上8点30分提醒。"],
+      "expected_status": "pending",
+      "expected_reminder_local": "2031-04-08 08:30",
+      "required_tools": ["create_todo"]
+    },
+    {
+      "id": "reminder-v2-holdout-existing",
+      "split": "holdout",
+      "initial_todos": ["{title}"],
+      "turns": ["给“{title}”安排2031年4月8日晚上7时30分的提醒。"],
+      "expected_status": "pending",
+      "expected_reminder_local": "2031-04-08 19:30",
+      "expected_reminder_version_delta": 1,
+      "required_tools": ["set_reminder"]
+    }
+  ]
+}

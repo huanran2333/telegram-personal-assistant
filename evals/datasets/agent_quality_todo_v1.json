@@ -1,0 +1,12 @@
+{
+  "dataset_version": "2026-10-12.todo.v1",
+  "description": "Isolated PG18 + real model, synthetic Todo task postconditions. No Telegram sender or external write provider.",
+  "cases": [
+    {"id":"todo-create","split":"dev","initial_todos":[],"turns":["创建任务：{title}"],"expected_status":"pending","required_tools":["create_todo"],"reply_must_include_title":false},
+    {"id":"todo-create-read","split":"dev","initial_todos":[],"turns":["创建任务：{title}","列出我的任务。"],"expected_status":"pending","required_tools":["create_todo","list_todos"],"reply_must_include_title":true},
+    {"id":"todo-create-complete","split":"dev","initial_todos":[],"turns":["创建任务：{title}","把“{title}”标记完成。"],"expected_status":"done","required_tools":["create_todo","update_todo"],"reply_must_include_title":false},
+    {"id":"todo-pronoun-complete","split":"dev","initial_todos":[],"turns":["创建任务：{title}","把刚才创建的那项任务标记完成。"],"expected_status":"done","required_tools":["create_todo","update_todo"],"reply_must_include_title":false},
+    {"id":"todo-missing-target","split":"holdout","initial_todos":[],"turns":["把“{title}”标记完成。"],"expected_status":null,"required_tools":[],"reply_must_include_title":false,"require_owned_unchanged":true},
+    {"id":"todo-holdout-create","split":"holdout","initial_todos":[],"turns":["请加一个待办，名称是“{title}”。"],"expected_status":"pending","required_tools":["create_todo"],"reply_must_include_title":false}
+  ]
+}

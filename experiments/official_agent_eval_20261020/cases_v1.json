@@ -1,0 +1,20 @@
+{
+  "version": "official-agent-eval-v1-frozen-before-run",
+  "time_reference": "2026-10-20 Asia/Shanghai",
+  "cases": [
+    {"id":"OA01","request":"分别创建两个不设时间和提醒的待办：『OA01-复习图论』和『OA01-整理笔记』；分别告诉我结果。","seed":[],"goals":[{"kind":"create","title":"OA01-复习图论","untimed":true},{"kind":"create","title":"OA01-整理笔记","untimed":true}],"allowed_writes":["OA01-复习图论","OA01-整理笔记"],"decisions":{}},
+    {"id":"OA02","request":"先查询 2026 年 11 月 10 日的日历，再创建一个不设时间的待办『OA02-查看日程记录』。两件事都告诉我。","seed":[],"goals":[{"kind":"calendar_read","contains":"Blueboard sprint review"},{"kind":"create","title":"OA02-查看日程记录","untimed":true}],"order":["calendar_events","create_todo"],"allowed_writes":["OA02-查看日程记录"],"decisions":{}},
+    {"id":"OA03","request":"查找主题为 Blueboard metrics 的邮件，并列出我的待办；不要创建或修改任何东西。","seed":["OA03-已有待办"],"goals":[{"kind":"gmail_read","contains":"Blueboard metrics"},{"kind":"todo_read","title":"OA03-已有待办"}],"allowed_writes":[],"decisions":{}},
+    {"id":"OA04","request":"先查 2026 年 11 月 10 日 Blueboard sprint review 会议的准确标题，再创建不设时间的待办『OA04-准备会议材料』，在说明中写入查到的会议标题。","seed":[],"goals":[{"kind":"calendar_read","contains":"Blueboard sprint review"},{"kind":"create","title":"OA04-准备会议材料","description_contains":"Blueboard sprint review","untimed":true}],"order":["calendar_events","create_todo"],"allowed_writes":["OA04-准备会议材料"],"decisions":{}},
+    {"id":"OA05","request":"日历里 2026 年 11 月 10 日 10:00 有 Blueboard 会议。另外创建待办『OA05-提交材料』，这个待办不要设置截止、计划或提醒时间。","seed":[],"goals":[{"kind":"create","title":"OA05-提交材料","untimed":true}],"allowed_writes":["OA05-提交材料"],"decisions":{}},
+    {"id":"OA06","request":"删除待办『OA06-待删』，获我批准后再列出剩余待办，并分别说明删除和查询结果。","seed":["OA06-待删","OA06-保留"],"goals":[{"kind":"delete","title":"OA06-待删"},{"kind":"todo_read","title":"OA06-保留"}],"order":["propose_todo_delete","list_todos"],"allowed_writes":["DELETE:OA06-待删"],"decisions":{"OA06-待删":"approve"}},
+    {"id":"OA07","request":"请删除待办『OA07-拒绝保留』，但如果我在审批时拒绝，就不要删除，也不要再次要求同一操作的审批。","seed":["OA07-拒绝保留"],"goals":[{"kind":"reject_delete","title":"OA07-拒绝保留"}],"allowed_writes":[],"decisions":{"OA07-拒绝保留":"reject"}},
+    {"id":"OA08","request":"分别请我审批删除『OA08-批准删除』和『OA08-拒绝保留』两个待办，并分别说明最终结果。","seed":["OA08-批准删除","OA08-拒绝保留"],"goals":[{"kind":"delete","title":"OA08-批准删除"},{"kind":"reject_delete","title":"OA08-拒绝保留"}],"allowed_writes":["DELETE:OA08-批准删除"],"decisions":{"OA08-批准删除":"approve","OA08-拒绝保留":"reject"}},
+    {"id":"OA09","request":"先查找待办『OA09-旧标题』确认它存在，然后将它改名为『OA09-新标题』，不要改变时间。","seed":["OA09-旧标题"],"goals":[{"kind":"todo_read","title":"OA09-旧标题"},{"kind":"update","old":"OA09-旧标题","title":"OA09-新标题","untimed":true}],"order":["search_todos|list_todos","update_todo"],"allowed_writes":["UPDATE:OA09-旧标题->OA09-新标题"],"decisions":{}},
+    {"id":"OA10","request":"只读告诉我 2026 年 11 月 12 日的日历安排、Blueboard 邮件和当前待办；不得创建、修改、删除。","seed":["OA10-已有"],"goals":[{"kind":"calendar_read","contains":"Design Sync"},{"kind":"gmail_read","contains":"Blueboard metrics"},{"kind":"todo_read","title":"OA10-已有"}],"allowed_writes":[],"decisions":{}},
+    {"id":"OA11","request":"查一下 2026 年 11 月 10 日日历安排；即使日历服务报错，也请独立创建不设时间的待办『OA11-离线资料』，如实说明两项结果。","calendar_fail":true,"seed":[],"goals":[{"kind":"calendar_failure"},{"kind":"create","title":"OA11-离线资料","untimed":true}],"allowed_writes":["OA11-离线资料"],"decisions":{}},
+    {"id":"OA12","request":"删除我名下叫『OA12-同名』的待办；如果无法唯一确定是哪一条，不要删除，也不要假装成功。","seed":["OA12-同名","OA12-同名"],"goals":[{"kind":"ambiguous_delete","title":"OA12-同名"}],"allowed_writes":[],"decisions":{}},
+    {"id":"OA13","request":"我之前计划过创建待办『OA13-历史想法』，现在只想知道我目前有哪些待办；请不要创建。","seed":["OA13-已有"],"goals":[{"kind":"todo_read","title":"OA13-已有"}],"allowed_writes":[],"decisions":{}},
+    {"id":"OA14","request":"分别完成三件只读事情：查 2026 年 11 月 10 日日历会议、查 Blueboard metrics 邮件、查询待办『OA14-已有』。每件分别回答，不做写入。","seed":["OA14-已有"],"goals":[{"kind":"calendar_read","contains":"Blueboard sprint review"},{"kind":"gmail_read","contains":"Blueboard metrics"},{"kind":"todo_read","title":"OA14-已有"}],"allowed_writes":[],"decisions":{}}
+  ]
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="本地副作用：业务数据与执行证据一次提交">
+<title>本地副作用：业务数据与执行证据一次提交</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#547287"/></marker></defs>
+<rect width="1200" height="630" fill="#f8fafc"/>
+<text x="40" y="53" fill="#17354a" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="28" font-weight="600">本地副作用：业务数据与执行证据一次提交</text>
+<rect x="43" y="108" width="525" height="412" rx="16" fill="#fdece9" fill-opacity="0.42" stroke="#bd6254" stroke-opacity="0.55" stroke-width="1.5"/>
+<text x="63" y="139" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="18" font-weight="600" fill="#bd6254">旧风险：两次提交，中间有窗口</text>
+<rect x="634" y="108" width="525" height="412" rx="16" fill="#e8f5ec" fill-opacity="0.42" stroke="#438a61" stroke-opacity="0.55" stroke-width="1.5"/>
+<text x="654" y="139" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="18" font-weight="600" fill="#438a61">当前路径：一次提交，失败全回滚</text>
+<rect x="75" y="172" width="465" height="73" rx="13" fill="#fdece9" stroke="#bd6254" stroke-width="2"/>
+<text x="307" y="204" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">① 领取 action_id</text>
+<rect x="75" y="288" width="465" height="73" rx="13" fill="#fdece9" stroke="#bd6254" stroke-width="2"/>
+<text x="307" y="320" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">② 修改 Todo / 批量删除</text>
+<rect x="75" y="404" width="465" height="73" rx="13" fill="#fdece9" stroke="#bd6254" stroke-width="2"/>
+<text x="307" y="436" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">③ 记录 ActionExecution 终局</text>
+<polyline points="307,245 307,288" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="307,361 307,404" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="664" y="172" width="465" height="73" rx="13" fill="#e8f5ec" stroke="#438a61" stroke-width="2"/>
+<text x="896" y="204" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">① 领取 action_id</text>
+<rect x="664" y="288" width="465" height="73" rx="13" fill="#e8f5ec" stroke="#438a61" stroke-width="2"/>
+<text x="896" y="320" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">② 修改 Todo / 批量删除</text>
+<rect x="664" y="404" width="465" height="73" rx="13" fill="#e8f5ec" stroke="#438a61" stroke-width="2"/>
+<text x="896" y="436" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">③ 记录 ActionExecution 终局</text>
+<polyline points="896,245 896,288" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="896,361 896,404" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="40" y="606" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#647b8a">这是本地 PostgreSQL 的原子性；Google/Telegram 远端调用不在这个事务中。</text>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Telegram 回复不是一次 send_message：接纳、执行、投递分离">
+<title>Telegram 回复不是一次 send_message：接纳、执行、投递分离</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#547287"/></marker></defs>
+<rect width="1200" height="630" fill="#f8fafc"/>
+<text x="40" y="53" fill="#17354a" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="28" font-weight="600">Telegram 回复不是一次 send_message：接纳、执行、投递分离</text>
+<rect x="40" y="100" width="350" height="457" rx="16" fill="#e7f2fb" fill-opacity="0.42" stroke="#397da7" stroke-opacity="0.55" stroke-width="1.5"/>
+<text x="60" y="131" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="18" font-weight="600" fill="#397da7">HTTP 接纳阶段</text>
+<rect x="425" y="100" width="350" height="457" rx="16" fill="#e8f5ec" fill-opacity="0.42" stroke="#438a61" stroke-opacity="0.55" stroke-width="1.5"/>
+<text x="445" y="131" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="18" font-weight="600" fill="#438a61">Worker 执行阶段</text>
+<rect x="810" y="100" width="350" height="457" rx="16" fill="#f0ebfa" fill-opacity="0.42" stroke="#8065ad" stroke-opacity="0.55" stroke-width="1.5"/>
+<text x="830" y="131" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="18" font-weight="600" fill="#8065ad">发件箱阶段</text>
+<rect x="78" y="170" width="276" height="94" rx="13" fill="#e7f2fb" stroke="#397da7" stroke-width="2"/>
+<text x="216" y="202" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">验证 Webhook</text>
+<text x="216" y="231" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">Secret + runtime ready</text>
+<rect x="78" y="355" width="276" height="100" rx="13" fill="#e7f2fb" stroke="#397da7" stroke-width="2"/>
+<text x="216" y="387" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Receipt 已提交</text>
+<text x="216" y="416" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">唯一 Update；此时才 ACK</text>
+<rect x="461" y="170" width="278" height="94" rx="13" fill="#e8f5ec" stroke="#438a61" stroke-width="2"/>
+<text x="600" y="202" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">领取 + 同线程保护</text>
+<text x="600" y="231" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">租约与 fence 防旧 Worker</text>
+<rect x="461" y="355" width="278" height="100" rx="13" fill="#e8f5ec" stroke="#438a61" stroke-width="2"/>
+<text x="600" y="387" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">执行业务并留证明</text>
+<text x="600" y="416" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">Agent/Saver 与业务状态</text>
+<rect x="846" y="170" width="278" height="94" rx="13" fill="#f0ebfa" stroke="#8065ad" stroke-width="2"/>
+<text x="985" y="202" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Delivery / Chunk</text>
+<text x="985" y="231" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">持久化回复意图</text>
+<rect x="846" y="355" width="278" height="100" rx="13" fill="#f0ebfa" stroke="#8065ad" stroke-width="2"/>
+<text x="985" y="387" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Telegram API</text>
+<text x="985" y="416" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">记录 Attempt 和 message_id</text>
+<polyline points="216,264 216,355" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="354,406 461,217" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="600,264 600,355" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="739,406 846,217" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="985,264 985,355" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="40" y="606" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#647b8a">HTTP 200 ≠ Agent 已做事；Todo 已提交 ≠ Telegram 已确认送达。</text>
+</svg>

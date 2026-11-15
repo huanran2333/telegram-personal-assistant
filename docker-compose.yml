@@ -1,0 +1,12 @@
+# Image build validation only. No database, credentials, Bot or background workers.
+# This is not a production deployment recipe; see docs/deployment.md.
+name: telegram-personal-assistant
+services:
+  image-smoke:
+    profiles: ["image-smoke"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: none
+    read_only: true
+    command: ["python", "-c", "import app; print('Image import OK')"]

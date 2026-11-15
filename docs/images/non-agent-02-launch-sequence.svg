@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="10 分钟工作台入口：Ticket 不等于登录凭据">
+<title>10 分钟工作台入口：Ticket 不等于登录凭据</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#547287"/></marker></defs>
+<rect width="1200" height="630" fill="#f8fafc"/>
+<text x="40" y="53" fill="#17354a" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="28" font-weight="600">10 分钟工作台入口：Ticket 不等于登录凭据</text>
+<rect x="95" y="104" width="210" height="68" rx="13" fill="#eef2f5" stroke="#7b8d99" stroke-width="2"/>
+<text x="200" y="136" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Bot 私聊</text>
+<line x1="200" y1="174" x2="200" y2="548" stroke="#bac8d0" stroke-dasharray="6 5"/>
+<rect x="358" y="104" width="210" height="68" rx="13" fill="#eef2f5" stroke="#7b8d99" stroke-width="2"/>
+<text x="463" y="136" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">服务端</text>
+<line x1="463" y1="174" x2="463" y2="548" stroke="#bac8d0" stroke-dasharray="6 5"/>
+<rect x="621" y="104" width="210" height="68" rx="13" fill="#eef2f5" stroke="#7b8d99" stroke-width="2"/>
+<text x="726" y="136" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Android WebView</text>
+<line x1="726" y1="174" x2="726" y2="548" stroke="#bac8d0" stroke-dasharray="6 5"/>
+<rect x="884" y="104" width="210" height="68" rx="13" fill="#eef2f5" stroke="#7b8d99" stroke-width="2"/>
+<text x="989" y="136" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">数据库</text>
+<line x1="989" y1="174" x2="989" y2="548" stroke="#bac8d0" stroke-dasharray="6 5"/>
+<polyline points="200,216 463,216" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="331" y="206" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#426074">/workbench</text>
+<polyline points="463,259 989,259" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="726" y="249" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#426074">保存 Ticket：Bot / 用户 / 到期</text>
+<polyline points="463,302 726,302" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="594" y="292" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#426074">回送按钮 URL</text>
+<polyline points="726,350 463,350" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="594" y="340" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#426074">Ticket + Telegram 签名 initData</text>
+<polyline points="463,391 989,391" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="726" y="381" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#426074">核对归属、有效期，保存 Session</text>
+<polyline points="463,437 726,437" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="594" y="427" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#426074">安全 Cookie + CSRF</text>
+<polyline points="726,491 463,491" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="594" y="481" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#426074">再次打开仍需校验</text>
+<text x="40" y="606" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#647b8a">过期 Ticket 不授予新 Session；已有 Session 也受自身有效期、Bot 归属和撤销约束。</text>
+</svg>

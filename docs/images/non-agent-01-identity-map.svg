@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="身份地图：同一个业务 User，两种认证入口">
+<title>身份地图：同一个业务 User，两种认证入口</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#547287"/></marker></defs>
+<rect width="1200" height="630" fill="#f8fafc"/>
+<text x="40" y="53" fill="#17354a" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="28" font-weight="600">身份地图：同一个业务 User，两种认证入口</text>
+<rect x="32" y="98" width="342" height="448" rx="16" fill="#e7f2fb" fill-opacity="0.42" stroke="#397da7" stroke-opacity="0.55" stroke-width="1.5"/>
+<text x="52" y="129" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="18" font-weight="600" fill="#397da7">Telegram 私聊</text>
+<rect x="428" y="98" width="342" height="448" rx="16" fill="#e8f5ec" fill-opacity="0.42" stroke="#438a61" stroke-opacity="0.55" stroke-width="1.5"/>
+<text x="448" y="129" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="18" font-weight="600" fill="#438a61">Android Mini App</text>
+<rect x="825" y="98" width="342" height="448" rx="16" fill="#f0ebfa" fill-opacity="0.42" stroke="#8065ad" stroke-opacity="0.55" stroke-width="1.5"/>
+<text x="845" y="129" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="18" font-weight="600" fill="#8065ad">PostgreSQL 权威记录</text>
+<rect x="67" y="165" width="270" height="100" rx="13" fill="#e7f2fb" stroke="#397da7" stroke-width="2"/>
+<text x="202" y="197" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Webhook</text>
+<text x="202" y="226" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">校验 Bot Secret、先保存 Update</text>
+<rect x="67" y="347" width="270" height="110" rx="13" fill="#e7f2fb" stroke="#397da7" stroke-width="2"/>
+<text x="202" y="379" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">消息处理 Worker</text>
+<text x="202" y="408" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">取 Telegram sender.id</text>
+<text x="202" y="431" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">映射 User.id</text>
+<rect x="464" y="165" width="270" height="100" rx="13" fill="#e8f5ec" stroke="#438a61" stroke-width="2"/>
+<text x="599" y="197" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">/workbench 按钮</text>
+<text x="599" y="226" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">Ticket 只绑定启动入口</text>
+<rect x="464" y="347" width="270" height="110" rx="13" fill="#e8f5ec" stroke="#438a61" stroke-width="2"/>
+<text x="599" y="379" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">签名 + Session</text>
+<text x="599" y="408" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">initData 证明 Telegram 身份</text>
+<text x="599" y="431" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">Cookie 承载后续会话</text>
+<rect x="858" y="169" width="275" height="85" rx="13" fill="#f0ebfa" stroke="#8065ad" stroke-width="2"/>
+<text x="995" y="201" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">users</text>
+<text x="995" y="230" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">业务用户 UUID / Telegram ID</text>
+<rect x="858" y="313" width="275" height="85" rx="13" fill="#f0ebfa" stroke="#8065ad" stroke-width="2"/>
+<text x="995" y="345" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">launch tickets</text>
+<text x="995" y="374" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">Bot、Telegram 用户、10 分钟</text>
+<rect x="858" y="433" width="275" height="85" rx="13" fill="#f0ebfa" stroke="#8065ad" stroke-width="2"/>
+<text x="995" y="465" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">web sessions</text>
+<text x="995" y="494" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">User、CSRF、过期与撤销</text>
+<polyline points="203,265 203,347" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="337,406 854,211" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="734,210 853,347" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="734,407 853,476" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="40" y="606" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#647b8a">两条入口共享 User.id；模型既不能声明身份，也不能直接签发 Session。</text>
+</svg>

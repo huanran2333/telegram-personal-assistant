@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="业务执行分三条路：直接修改、审批执行、日历投影">
+<title>业务执行分三条路：直接修改、审批执行、日历投影</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#547287"/></marker></defs>
+<rect width="1200" height="630" fill="#f8fafc"/>
+<text x="40" y="53" fill="#17354a" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="28" font-weight="600">业务执行分三条路：直接修改、审批执行、日历投影</text>
+<rect x="53" y="125" width="255" height="95" rx="13" fill="#e7f2fb" stroke="#397da7" stroke-width="2"/>
+<text x="180" y="157" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">已认证的用户意图</text>
+<text x="180" y="186" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">Telegram Agent 或 Web 表单</text>
+<polygon points="448,105 549,172 448,239 347,172" fill="#fff0db" stroke="#bd8137" stroke-width="2"/>
+<text x="448" y="178" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#17354a">操作策略？</text>
+<rect x="636" y="103" width="508" height="100" rx="13" fill="#e8f5ec" stroke="#438a61" stroke-width="2"/>
+<text x="890" y="135" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">普通 Todo 修改</text>
+<text x="890" y="164" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">服务端校验用户、版本；业务表提交</text>
+<rect x="636" y="256" width="508" height="107" rx="13" fill="#fff0db" stroke="#bd8137" stroke-width="2"/>
+<text x="890" y="288" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">危险操作：先提案</text>
+<text x="890" y="317" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">精确目标 + 版本 → 审批 → ActionExecution</text>
+<rect x="636" y="428" width="508" height="105" rx="13" fill="#f0ebfa" stroke="#8065ad" stroke-width="2"/>
+<text x="890" y="460" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">已排期 Todo 的后台投影</text>
+<text x="890" y="489" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">Todo 是权威；Mirror 记录 Google 同步愿望</text>
+<polyline points="308,172 346,172" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="549,150 636,150" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="448,240 448,310 636,310" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1125,203 1173,203 1173,475 1144,475" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
+<polyline points="1040,363 1040,428" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
+<text x="40" y="606" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#647b8a">“写数据库”不自动等于“要审批”；“日历投影”也不把 Google Event 变成 Todo 权威。</text>
+</svg>

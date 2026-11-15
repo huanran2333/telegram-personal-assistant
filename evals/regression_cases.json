@@ -1,0 +1,22 @@
+[
+  {"name":"simple_todo_create","request":"Add groceries tomorrow","requires_plan":false,"operations":[],"approval":false},
+  {"name":"simple_todo_list","request":"List my todos","requires_plan":false,"operations":[],"approval":false},
+  {"name":"simple_todo_search","request":"Search todos for thesis","requires_plan":false,"operations":[],"approval":false},
+  {"name":"simple_profile","request":"I prefer concise answers","requires_plan":false,"operations":[],"approval":false},
+  {"name":"simple_web","request":"Search the web for weather","requires_plan":false,"operations":[],"approval":false},
+  {"name":"calendar_read","request":"Is my calendar free Friday afternoon?","requires_plan":true,"operations":["availability"],"approval":false},
+  {"name":"cross_create_a","request":"Check my calendar Friday afternoon and schedule two hours to write thesis if free","requires_plan":true,"operations":["availability","create_event"],"approval":true},
+  {"name":"cross_create_b","request":"Find a meeting-free evening next week and schedule thesis writing","requires_plan":true,"operations":["availability","create_event"],"approval":true},
+  {"name":"todo_reminder_calendar","request":"Check Thursday afternoon, schedule two hours to write my Friday thesis, and remind me Thursday at 8pm","requires_plan":true,"operations":["availability","create_event","create_todo"],"approval":true},
+  {"name":"calendar_update","request":"Move thesis discussion meeting to five","requires_plan":true,"operations":["search_events","update_event"],"approval":true},
+  {"name":"calendar_delete","request":"Delete thesis discussion meeting","requires_plan":true,"operations":["search_events","delete_event"],"approval":true},
+  {"name":"calendar_create","request":"Check meeting calendar and create a writing block","requires_plan":true,"operations":["availability","create_event"],"approval":true},
+  {"name":"calendar_read_again","request":"Show calendar availability","requires_plan":true,"operations":["availability"],"approval":false},
+  {"name":"destructive_again","request":"Delete calendar meeting","requires_plan":true,"operations":["search_events","delete_event"],"approval":true},
+  {"name":"update_again","request":"Update meeting calendar time","requires_plan":true,"operations":["search_events","update_event"],"approval":true},
+  {"name":"chat","request":"Hello, how are you?","requires_plan":false,"operations":[],"approval":false},
+  {"name":"todo_complete","request":"Mark gym done","requires_plan":false,"operations":[],"approval":false},
+  {"name":"web_search","request":"What is the weather today?","requires_plan":false,"operations":[],"approval":false},
+  {"name":"profile_update","request":"I live in Shanghai","requires_plan":false,"operations":[],"approval":false},
+  {"name":"calendar_and_reminder","request":"Find two free hours Thursday afternoon to write the Friday thesis and remind me Thursday at 8pm","requires_plan":true,"operations":["availability","create_event","create_todo"],"approval":true}
+]

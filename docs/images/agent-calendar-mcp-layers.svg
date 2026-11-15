@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="850" viewBox="0 0 1500 850" role="img" aria-labelledby="title desc">
+  <title id="title">Calendar MCP 从连接到 Agent 工具调用的分层流程</title>
+  <desc id="desc">上半部为启动时 MCP 工具发现；下半部分别为模型读取 Calendar、发起需要审批的 Calendar 创建以及不走 MCP 的条件写入。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#49667b"/></marker>
+    <style>
+      text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#193348}
+      .title{font-size:30px;font-weight:700}.sub{font-size:18px;fill:#506b7c}
+      .lane{font-size:21px;font-weight:700}.main{font-size:20px;font-weight:650}.note{font-size:16px;fill:#456072}
+      .arrow{stroke:#49667b;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .read{fill:#e5f3ed;stroke:#74a989;stroke-width:2}.write{fill:#fff0db;stroke:#c89041;stroke-width:2}
+      .infra{fill:#e8eef8;stroke:#7d9ac1;stroke-width:2}.guard{fill:#f9e8e8;stroke:#bc7777;stroke-width:2}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1500" height="850" fill="#f8fafc"/>
+  <text x="50" y="55" class="title">Calendar MCP：连接、封装、调用与审批</text>
+  <text x="50" y="86" class="sub">蓝色＝启动/传输层　绿色＝只读业务工具　橙色＝待审批写入　红色＝服务端校验</text>
+
+  <rect x="45" y="115" width="1410" height="185" rx="18" fill="#edf3f8" stroke="#d3dfeb"/>
+  <text x="68" y="150" class="lane">① 启动时：发现 MCP 工具，不直接绑定给模型</text>
+  <rect x="75" y="178" width="290" height="82" rx="14" class="infra"/>
+  <text x="220" y="209" text-anchor="middle" class="main">应用配置</text>
+  <text x="220" y="237" text-anchor="middle" class="note">启用开关、OAuth 凭据路径</text>
+  <path d="M365 219H415" class="arrow"/>
+  <rect x="425" y="178" width="295" height="82" rx="14" class="infra"/>
+  <text x="572" y="209" text-anchor="middle" class="main">MultiServerMCPClient</text>
+  <text x="572" y="237" text-anchor="middle" class="note">stdio 启动固定版 Server</text>
+  <path d="M720 219H770" class="arrow"/>
+  <rect x="780" y="178" width="285" height="82" rx="14" class="infra"/>
+  <text x="922" y="209" text-anchor="middle" class="main">get_tools() + Schema 检查</text>
+  <text x="922" y="237" text-anchor="middle" class="note">发现底层 list-events 等</text>
+  <path d="M1065 219H1115" class="arrow"/>
+  <rect x="1125" y="178" width="295" height="82" rx="14" class="infra"/>
+  <text x="1272" y="209" text-anchor="middle" class="main">MCPCalendarAdapter</text>
+  <text x="1272" y="237" text-anchor="middle" class="note">按名称保存可调用对象</text>
+
+  <rect x="45" y="325" width="690" height="420" rx="18" fill="#f0f7f3" stroke="#d2e4d8"/>
+  <text x="68" y="360" class="lane">② 请求时：只读工具返回模型</text>
+  <rect x="74" y="387" width="280" height="68" rx="14" class="read"/>
+  <text x="214" y="413" text-anchor="middle" class="main">Agent 可见 calendar_events</text>
+  <text x="214" y="439" text-anchor="middle" class="note">项目定义的业务 Schema</text>
+  <path d="M354 421H402" class="arrow"/>
+  <rect x="412" y="387" width="286" height="68" rx="14" class="guard"/>
+  <text x="555" y="413" text-anchor="middle" class="main">绑定前和执行时验权限</text>
+  <text x="555" y="439" text-anchor="middle" class="note">owner、区间、工具白名单</text>
+  <path d="M555 455V497" class="arrow"/>
+  <rect x="245" y="507" width="300" height="68" rx="14" class="read"/>
+  <text x="395" y="533" text-anchor="middle" class="main">Adapter.search_events</text>
+  <text x="395" y="559" text-anchor="middle" class="note">空词 list-events；有词 search-events</text>
+  <path d="M395 575V615" class="arrow"/>
+  <rect x="245" y="625" width="300" height="68" rx="14" class="infra"/>
+  <text x="395" y="651" text-anchor="middle" class="main">MCP → Google Calendar</text>
+  <text x="395" y="677" text-anchor="middle" class="note">最多 20 条有界字段回 ToolMessage</text>
+  <text x="68" y="721" class="note">模型只见业务工具；MCP 原始工具不进入 bind_tools。</text>
+
+  <rect x="765" y="325" width="690" height="420" rx="18" fill="#fff8ee" stroke="#efdfc5"/>
+  <text x="788" y="360" class="lane">③ 请求时：写入先暂停并等待人决定</text>
+  <rect x="794" y="387" width="283" height="68" rx="14" class="write"/>
+  <text x="935" y="413" text-anchor="middle" class="main">Agent 可见 propose_*</text>
+  <text x="935" y="439" text-anchor="middle" class="note">生成精确 ActionProposal</text>
+  <path d="M1077 421H1125" class="arrow"/>
+  <rect x="1135" y="387" width="283" height="68" rx="14" class="guard"/>
+  <text x="1276" y="413" text-anchor="middle" class="main">同图 approval_gate</text>
+  <text x="1276" y="439" text-anchor="middle" class="note">interrupt；拒绝则不写 Google</text>
+  <path d="M1276 455V497" class="arrow"/>
+  <rect x="964" y="507" width="312" height="68" rx="14" class="write"/>
+  <text x="1120" y="533" text-anchor="middle" class="main">批准后执行器重新校验</text>
+  <text x="1120" y="559" text-anchor="middle" class="note">ActionExecution、空闲与版本</text>
+  <path d="M1120 575V615" class="arrow"/>
+  <rect x="964" y="625" width="312" height="68" rx="14" class="infra"/>
+  <text x="1120" y="651" text-anchor="middle" class="main">Adapter → MCP create-event</text>
+  <text x="1120" y="677" text-anchor="middle" class="note">结果对账后 ToolMessage 回 Agent</text>
+  <text x="788" y="721" class="note">例外：精确 ETag 读取/条件修改删除走 Google API，不走 MCP。</text>
+
+  <text x="50" y="796" class="sub">边界：MCP 是 Calendar 外部接口；身份、审批、业务幂等和用户可见回复由本项目代码负责。</text>
+</svg>

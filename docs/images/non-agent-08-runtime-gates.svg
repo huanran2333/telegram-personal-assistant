@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="启动不是打开端口就绪：依赖分层检查">
+<title>启动不是打开端口就绪：依赖分层检查</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#547287"/></marker></defs>
+<rect width="1200" height="630" fill="#f8fafc"/>
+<text x="40" y="53" fill="#17354a" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="28" font-weight="600">启动不是打开端口就绪：依赖分层检查</text>
+<rect x="64" y="115" width="283" height="85" rx="13" fill="#f0ebfa" stroke="#8065ad" stroke-width="2"/>
+<text x="205" y="147" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">数据库 / Store / Saver</text>
+<text x="205" y="176" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">业务与图状态基础</text>
+<rect x="454" y="115" width="283" height="85" rx="13" fill="#e8f5ec" stroke="#438a61" stroke-width="2"/>
+<text x="595" y="147" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Agent + 业务运行时</text>
+<text x="595" y="176" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">工具、执行器、Calendar 适配</text>
+<rect x="844" y="115" width="283" height="85" rx="13" fill="#e7f2fb" stroke="#397da7" stroke-width="2"/>
+<text x="985" y="147" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">Telegram 身份</text>
+<text x="985" y="176" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">getMe + 预检 ACK</text>
+<polyline points="347,157 454,157" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="737,157 844,157" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polygon points="600,241 737,311 600,381 463,311" fill="#fff0db" stroke="#bd8137" stroke-width="2"/>
+<text x="600" y="317" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#17354a">必要组件 ready？</text>
+<polyline points="988,200 988,310 738,310" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="116" y="440" width="385" height="86" rx="13" fill="#fdece9" stroke="#bd6254" stroke-width="2"/>
+<text x="308" y="472" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">否：拒绝接纳</text>
+<text x="308" y="501" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">Webhook 返回 503；不假装已经处理</text>
+<rect x="699" y="440" width="385" height="86" rx="13" fill="#e8f5ec" stroke="#438a61" stroke-width="2"/>
+<text x="891" y="472" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="19" font-weight="600" fill="#17354a">是：开放对应入口</text>
+<text x="891" y="501" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="15" font-weight="400" fill="#426074">Worker 恢复；最后才 setWebhook</text>
+<polyline points="462,311 305,311 305,440" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="383" y="365" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#426074">否</text>
+<polyline points="738,311 892,311 892,440" fill="none" stroke="#547287" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="815" y="365" text-anchor="middle" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#426074">是</text>
+<text x="40" y="606" text-anchor="start" font-family="Microsoft YaHei, Noto Sans CJK SC, PingFang SC, sans-serif" font-size="14" font-weight="400" fill="#647b8a">Web 入口和主动调度还有各自开关；启动检查不等于真实公网/真机验收。</text>
+</svg>

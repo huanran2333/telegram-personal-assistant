@@ -1,0 +1,53 @@
+{
+  "version": "unified-agent-acceptance-v1",
+  "source": "synthetic; no real user, Calendar or Gmail data",
+  "cases": [
+    {
+      "id": "cross_read_three_domains",
+      "prompt": "请查看 2026-11-15 的日历安排、未读 Gmail 邮件，并列出我的 Todo；分别告诉我查到了什么。",
+      "required_tools": ["calendar_events", "gmail_unread", "list_todos"],
+      "expected_terms": ["合成项目组会议", "合成邮件", "合成待办"]
+    },
+    {
+      "id": "conditional_free_todo",
+      "prompt": "先查 2026-11-15 14:00—16:00 的日历是否有空。若有空，创建名为“合成复盘”的 Todo，并计划在这段时间完成；若没空就不要创建。",
+      "required_tools": ["calendar_availability", "create_todo"],
+      "expected_todo": "合成复盘"
+    },
+    {
+      "id": "conditional_busy_no_write",
+      "prompt": "先查 2026-11-15 14:00—16:00 的日历是否有空。若有空，创建名为“合成冲突任务”的 Todo；若没空就不要创建。",
+      "required_tools": ["calendar_availability"],
+      "forbidden_tools": ["create_todo"],
+      "forbidden_todo": "合成冲突任务",
+      "busy": true
+    },
+    {
+      "id": "greeting_without_tools",
+      "prompt": "你好，只需向我问好。",
+      "required_tools": [],
+      "forbidden_tools": ["create_todo", "calendar_events", "gmail_unread"]
+    },
+    {
+      "id": "approval_without_delete",
+      "prompt": "删除名为“合成待办”的 Todo。先让我审批，不要直接删除。",
+      "required_tools": ["propose_todo_delete"],
+      "forbidden_tools": ["delete_todo"],
+      "expected_handoff": true
+    },
+    {
+      "id": "read_then_approval_partial_summary",
+      "prompt": "先告诉我 2026-11-15 的日历安排，再提议删除名为“合成待办”的 Todo，等我审批；不要遗漏前一个查询结果。",
+      "required_tools": ["calendar_events", "propose_todo_delete"],
+      "expected_handoff": true,
+      "expected_terms": ["合成项目组会议"]
+    },
+    {
+      "id": "meeting_prep_grounding",
+      "prompt": "请准备 2026-11-15 的合成项目组会议，只引用可核实的日历、邮件或待办证据，不要编造参会人承诺。",
+      "required_tools": ["meeting_evidence"],
+      "expected_terms": ["合成项目组会议"],
+      "forbidden_terms": ["已经同意转账", "确认转账"]
+    }
+  ]
+}

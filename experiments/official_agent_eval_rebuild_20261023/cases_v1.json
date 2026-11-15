@@ -1,0 +1,26 @@
+{
+  "version": "create-agent-current-v1",
+  "frozen_before_first_run": "2026-10-23",
+  "time_reference": "2026-10-23 Asia/Shanghai",
+  "world": {
+    "events": [
+      {"id":"ev-orchid","summary":"Orchid 方案评审","start":"2026-11-18T09:00:00+08:00","end":"2026-11-18T09:30:00+08:00"},
+      {"id":"ev-harbor","summary":"Harbor 接口讨论","start":"2026-11-19T13:00:00+08:00","end":"2026-11-19T13:45:00+08:00"}
+    ],
+    "mail": [{"id":"mail-orchid","thread_id":"thread-orchid","subject":"Orchid 评审资料","body":"附件清单已准备"}]
+  },
+  "cases": [
+    {"id":"DEV01","split":"development","request":"分别创建两个没有时间和提醒的待办：『DEV01-校对目录』与『DEV01-整理图例』。分别说出结果。","seed":[],"goals":[{"kind":"create","title":"DEV01-校对目录","untimed":true},{"kind":"create","title":"DEV01-整理图例","untimed":true}],"allowed_writes":["DEV01-校对目录","DEV01-整理图例"],"decisions":{}},
+    {"id":"DEV02","split":"development","request":"先查 2026 年 11 月 18 日 Orchid 方案评审的准确标题；查到后再建一个无时间待办『DEV02-备评审材料』，说明里写入查到的标题。若未查到则不要创建。","seed":[],"goals":[{"kind":"calendar_read","contains":"Orchid 方案评审"},{"kind":"create","title":"DEV02-备评审材料","untimed":true,"description_contains":"Orchid 方案评审"}],"order":{"read":"calendar_events|calendar_event","write":"create_todo"},"allowed_writes":["DEV02-备评审材料"],"decisions":{}},
+    {"id":"DEV03","split":"development","request":"2026 年 11 月 18 日早上有 Orchid 评审。另创建待办『DEV03-提交摘要』，但这个待办不要设任何截止、计划或提醒时间。","seed":[],"goals":[{"kind":"create","title":"DEV03-提交摘要","untimed":true}],"allowed_writes":["DEV03-提交摘要"],"decisions":{}},
+    {"id":"DEV04","split":"development","request":"只读检查 2026 年 11 月 18 日的日历事件、主题含 Orchid 的邮件，以及我现在的待办。三项分别回答，绝不新增或修改数据。","seed":["DEV04-现有条目"],"goals":[{"kind":"calendar_read","contains":"Orchid 方案评审"},{"kind":"gmail_read","contains":"Orchid 评审资料"},{"kind":"todo_read","contains":"DEV04-现有条目"}],"allowed_writes":[],"decisions":{}},
+    {"id":"DEV05","split":"development","request":"分别申请删除『DEV05-删掉』与『DEV05-保留』，两个目标由我分别决定；按决定如实反馈。","seed":["DEV05-删掉","DEV05-保留"],"goals":[{"kind":"delete","title":"DEV05-删掉"},{"kind":"reject_delete","title":"DEV05-保留"}],"allowed_writes":["DELETE:DEV05-删掉"],"decisions":{"DEV05-删掉":"approve","DEV05-保留":"reject"}},
+    {"id":"DEV06","split":"development","request":"先读取 2026 年 11 月 18 日的日历。如果本次读取失败，不要编造安排；另外独立创建无时间待办『DEV06-离线核对』，两件事分别说明。","seed":[],"calendar_fault":"always","goals":[{"kind":"calendar_failure"},{"kind":"create","title":"DEV06-离线核对","untimed":true}],"allowed_writes":["DEV06-离线核对"],"decisions":{}},
+    {"id":"HOLD01","split":"holdout","request":"创建『HOLD01-复核协议』和『HOLD01-补充示例』两条待办，都不安排时间、不设提醒；完成后逐项告诉我。","seed":[],"goals":[{"kind":"create","title":"HOLD01-复核协议","untimed":true},{"kind":"create","title":"HOLD01-补充示例","untimed":true}],"allowed_writes":["HOLD01-复核协议","HOLD01-补充示例"],"decisions":{}},
+    {"id":"HOLD02","split":"holdout","request":"先确认 2026 年 11 月 19 日日历中的 Harbor 接口讨论，再创建无时间待办『HOLD02-列接口问题』；说明中写入确认的会议标题。没有可靠会议结果就不要创建。","seed":[],"goals":[{"kind":"calendar_read","contains":"Harbor 接口讨论"},{"kind":"create","title":"HOLD02-列接口问题","description_contains":"Harbor 接口讨论","untimed":true}],"order":{"read":"calendar_events|calendar_event","write":"create_todo"},"allowed_writes":["HOLD02-列接口问题"],"decisions":{}},
+    {"id":"HOLD03","split":"holdout","request":"不要记新的待办。我只是讨论『HOLD03-考虑培训』这个想法；请只列出我目前已有的待办。","seed":["HOLD03-已有任务"],"goals":[{"kind":"todo_read","contains":"HOLD03-已有任务"}],"allowed_writes":[],"decisions":{}},
+    {"id":"HOLD04","split":"holdout","request":"请申请删除『HOLD04-等待确认』；若我拒绝，保持原样，不要第二次提同一删除。","seed":["HOLD04-等待确认"],"goals":[{"kind":"reject_delete","title":"HOLD04-等待确认"}],"allowed_writes":[],"decisions":{"HOLD04-等待确认":"reject"}},
+    {"id":"HOLD05","split":"holdout","request":"查询 2026 年 11 月 19 日的 Harbor 接口讨论和我目前的待办；另创建不设时间的『HOLD05-整理问题』。这三个结果分别告诉我，别把会议时间写进待办。","seed":["HOLD05-旧任务"],"goals":[{"kind":"calendar_read","contains":"Harbor 接口讨论"},{"kind":"todo_read","contains":"HOLD05-旧任务"},{"kind":"create","title":"HOLD05-整理问题","untimed":true}],"allowed_writes":["HOLD05-整理问题"],"decisions":{}},
+    {"id":"HOLD06","split":"holdout","request":"查 2026 年 11 月 19 日的日历安排。如果服务第一次暂时失败，请确认后再报告，不要把失败当成空日历，也不要写入任何业务数据。","seed":[],"calendar_fault":"once","goals":[{"kind":"calendar_read","contains":"Harbor 接口讨论"}],"allowed_writes":[],"decisions":{}}
+  ]
+}
